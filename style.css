@@ -1,3 +1,6 @@
 /**
  * Your CSS goes here.
  */
+* {
+  background-color: black;
+}
