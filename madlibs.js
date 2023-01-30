@@ -29,7 +29,7 @@
 
 function parseStory(rawStory) {
   let arr = rawStory.split(' ');
-  let newArr = arr.map(ele => { 
+  let newArray = arr.map(ele => { 
     if(ele.includes('[')){ 
       let pos;
       let index = ele.indexOf('[');
@@ -39,15 +39,15 @@ function parseStory(rawStory) {
         pos = 'verb';
       } else if(regex === 'n'){
         pos = 'noun';
-      } else if(regex === 'o'){
-        pos = 'object';
+      } else if(regex === 'a'){
+        pos = 'adjective ';
       }
       return {word: word, pos: pos}
     } else{
       return {word: ele}
     }
   });
-  return newArr;
+  return newArray;
 }
 
 /**
