@@ -1,3 +1,76 @@
 /**
  * Your CSS goes here.
  */
+/* Adding new fonts */
+@font-face {
+    font-family: "gothamBoldItalic";
+    src: url(/Gotham-Font/GothamBoldItalic.ttf);
+}
+
+/* Adding another new font */
+@font-face {
+    font-family: "gothamUltraItalic";
+    src: url(/Gotham-Font/Gotham-UltraItalic.otf);
+}
+
+/* The default of the wep body */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url(/Project-Pictures/body-bg.jpg) round;
+    background-size: cover;
+}
+
+/* The team name */
+h1 {
+    background: linear-gradient(rgb(0, 0, 0), rgb(247, 156, 120), rgb(0, 0, 0), rgb(247, 156, 120));
+    -webkit-background-clip: text;
+    color: transparent;
+    text-align: center;
+    font-size: 64pt;
+    font-family: "gothamUltraItalic";
+}
+
+/* The container of madlips texts */
+#madlipsText {
+    display: flex;
+    justify-content: space-around;
+    margin: 2%;
+    font-family: "gothamBoldItalic";
+}
+
+/* The madlips style */
+.madLibsEdit,
+.madLibsPreview {
+    opacity: 0.8;
+    background-image: url(/Project-Pictures/test.jpg);
+    margin: 1%;
+    width: 47%;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-family: "gothamUltraItalic";
+    padding: 1%;
+    line-height: 2rem;
+
+}
+
+/* The inputs styling for the noun */
+
+input {
+    background: fixed;
+    border: none;
+    width: 100px;
+    border-bottom: 2px solid;
+}
+
+/* The inputs styling on focus*/
+input:focus {
+    outline: none;
+    /* background: black; */
+    color: black;
+    box-shadow: 0 0 0 2px #2196F3;
+}
