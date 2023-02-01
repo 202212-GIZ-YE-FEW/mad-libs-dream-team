@@ -78,15 +78,20 @@ function buildStory(processedStory) {
 
       inputEdit.maxLength = 20;
 
-      // inputEdit.addEventListener("keydown", () => {
-      //   inputPreview.value = inputEdit.value;
-      // });
+      inputEdit.addEventListener("keyup", () => {
+        inputPreview.value = inputEdit.value;
+      });
 
       inputEdit.addEventListener("keydown", (event) => {
-        if (event.key === "Enter") {
+        if (event.key === "Enter" || event.key === "ArrowRight") {
           let nextElement = inputEdit.nextElementSibling;
           if (nextElement != null) {
             nextElement.focus();
+          }
+        } else if (event.key === "ArrowLeft") {
+          let previousElememt = inputEdit.previousElementSibling;
+          if (previousElememt != null) {
+            previousElememt.focus();
           }
         }
       });
