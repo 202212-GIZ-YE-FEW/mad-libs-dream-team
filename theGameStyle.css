@@ -52,18 +52,19 @@ h1 {
 #madlipsText {
     display: flex;
     justify-content: space-around;
-    margin: 2%;
+    /* margin: 2%; */
     font-family: "gothamBoldItalic";
+    color:black;
 }
 
 /* The madlips style */
 .madLibsEdit,
 .madLibsPreview {
-    opacity: 0.8;
+    /* opacity: 0.8; */
     background-image: url(/Project-Pictures/test.jpg);
-    margin: 1%;
+    margin: 0.3%;
     width: 100%;
-    border: 1px solid #ccc;
+    border: 1px solid rgb(7, 7, 7);
     border-radius: 20px;
     font-family: "gothamUltraItalic";
     padding: 1%;
@@ -77,14 +78,23 @@ h1 {
 input {
     background: fixed;
     border: none;
-    width: 100px;
+    width: 120px;
     border-bottom: 2px solid;
+    margin: 3px;
+    border-radius: 20px;
+    /* color:white; */
+   
+    font-family: "gothamUltraItalic";
+    /* color: #000; */
+    text-align: left;
+    padding-left: 10px;
+    margin-right: 1px;
 }
 
 /* The inputs styling on focus*/
 input:focus {
     outline: none;
-    /* background: black; */
-    color: black;
-    box-shadow: 0 0 0 2px #2196F3;
+    background: black;
+    color: rgb(255, 255, 255);
+    box-shadow: 0 0 0 2px #ef0404c8;
 }
