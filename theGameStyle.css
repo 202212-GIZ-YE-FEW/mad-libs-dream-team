@@ -30,7 +30,7 @@
     height: 100vh;
 }
 
-/* .content {
+.content {
     position: absolute;
     top: 0;
     height: 100vh;
@@ -38,7 +38,7 @@
 }
 
 /* The team name */
-/* h1 {
+h1 {
     background: linear-gradient(rgb(0, 0, 0), rgb(247, 156, 120), rgb(0, 0, 0), rgb(247, 156, 120));
     -webkit-background-clip: text;
     background-clip: text;
@@ -71,7 +71,7 @@
 
 }
 
-*/ */
+
 /* The inputs styling for the noun */
 
 input {
