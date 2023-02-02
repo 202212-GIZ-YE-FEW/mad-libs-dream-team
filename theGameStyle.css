@@ -52,44 +52,6 @@
 	animation: title-animation-display 6s, title-animation-position 7s linear forwards;
 }
 
-/* The Animation Of The Title */
-@keyframes title-animation-display {
-	0% {
-		opacity: 0;
-	}
-
-	25% {
-		opacity: 0;
-	}
-
-	50% {
-		opacity: 0;
-	}
-
-	100% {
-		opacity: 1;
-	}
-}
-
-@keyframes title-animation-position {
-	0% {
-		top: 43%;
-	}
-
-	50% {
-		top: 43%;
-	}
-
-
-	75% {
-		top: 43%;
-	}
-
-	100% {
-		top: 2%;
-	}
-}
-
 /* The Mask Of The Page */
 .mask {
 	background-image: url(/Project-Pictures/body-bg.jpg);
@@ -115,9 +77,6 @@
 	height: 100vh;
 	width: 100%;
 }
-
-/* The team name */
-
 
 /* The container of madlips texts */
 #madlipsText {
@@ -217,5 +176,44 @@ input:focus {
 	100% {
 		display: block;
 		opacity: 1;
+	}
+}
+
+/* Title Animation for Display */
+@keyframes title-animation-display {
+	0% {
+		opacity: 0;
+	}
+
+	25% {
+		opacity: 0;
+	}
+
+	50% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+/* Title Animation to change position */
+@keyframes title-animation-position {
+	0% {
+		top: 43%;
+	}
+
+	50% {
+		top: 43%;
+	}
+
+
+	75% {
+		top: 43%;
+	}
+
+	100% {
+		top: 2%;
 	}
 }
