@@ -23,7 +23,7 @@
 
 /* The First Word Shows When Enter The Page */
 .hi {
-	display: none;
+	/* display: none; */
 	opacity: 0;
 	position: absolute;
 	font-size: 15rem;
@@ -123,12 +123,8 @@ h1 {
 	display: flex;
 	justify-content: space-around;
 	font-family: "gothamBoldItalic";
-	margin-top: 18%;
-	display: flex;
 	flex-direction: row;
-	font-family: "gothamBoldItalic";
-	justify-content: space-around;
-	margin: 10px auto;
+	margin: 10% auto;
 }
 
 @media (max-width: 767px) {
@@ -158,51 +154,37 @@ h1 {
 
 
 /* The inputs style */
-/* input {
-	background: fixed;
-	border: none;
-	width: 100px;
-	border-bottom: 2px solid;
-	background-image: url(/Project-Pictures/test.jpg);
-	margin: 10px;
-	flex: 50%;
-	border: 1px solid #ccc;
-	margin: 0.3%;
-	width: 100%;
-	border: 1px solid rgb(7, 7, 7);
-	border-radius: 20px;
-	font-family: "gothamUltraItalic";
-	padding: 1%;
-	line-height: 2rem;
-	box-shadow: 5px 1px 5px black;
-} */
-
 input {
 	background: fixed;
 	border: none;
 	border-bottom: 2px solid;
-	font-family: "gothamUltraItalic";
-	margin: 10px;
 	text-align: center;
-	width: 6rem;
+	margin: 5px;
+	flex: 50%;
 	color: black;
-	width: 120px;
-	border-bottom: 2px solid;
-	margin: 3px;
+	border: 1px solid #ccc;
+	width: 20%;
+	border: 1px solid rgb(7, 7, 7);
 	border-radius: 20px;
 	font-family: "gothamUltraItalic";
-	text-align: left;
-	padding-left: 10px;
-	margin-right: 1px;
-	line-height: 2rem;
-
+	line-height: 1.5rem;
+	box-shadow: 5px 1px 5px black;
 }
+
 
 /* The inputs styling on focus*/
 input:focus {
 	outline: none;
 	color: black;
 	box-shadow: 0 0 0 2px #2196F3;
+}
+
+.madLibsPreview input {
+	border: none;
+	background: black;
+	color: rgb(255, 255, 255);
+	box-shadow: 0 0 0 2px #ef0404c8;
+
 }
 
 /* The Animation for the Hi Sentens */
@@ -239,12 +221,4 @@ input:focus {
 	100% {
 		opacity: 1;
 	}
-}
-
-.madLibsPreview input {
-	border: none;
-	background: black;
-	color: rgb(255, 255, 255);
-	box-shadow: 0 0 0 2px #ef0404c8;
-
 }
