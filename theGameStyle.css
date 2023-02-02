@@ -78,13 +78,21 @@
 	width: 100%;
 }
 
+.descripe {
+	position: absolute;
+	font-size: 1.5rem;
+	color: red;
+	left: 30%;
+	top: 96.5%;
+}
+
 /* The container of madlips texts */
 #madlipsText {
 	display: flex;
 	justify-content: space-between;
 	font-family: "gothamBoldItalic";
 	flex-direction: row;
-	margin: 10% auto;
+	margin: 7% auto;
 }
 
 @media (max-width: 767px) {
