@@ -117,4 +117,17 @@ getRawStory()
   .then(parseStory)
   .then((processedStory) => {
     buildStory(processedStory);
+    const reset = document.getElementById("reset");
+    reset.value = "Reset";
+    reset.addEventListener("click", () => {
+      const editBlanks = document.querySelectorAll(".madLibsEdit input");
+      editBlanks.forEach((item) => {
+        item.value = "";
+        item.style = "";
+        item.classList.add(`${item.placeholder}`);
+      });
+      prevBlanks.forEach((item) => {
+        item.innerHTML = "";
+      });
+    });
   });
