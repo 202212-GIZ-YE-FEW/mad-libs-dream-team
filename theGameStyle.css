@@ -1,0 +1,246 @@
+/**
+ * Your CSS goes here.
+ */
+
+/* Adding new fonts */
+@font-face {
+  font-family: "gothamBoldItalic";
+  src: url(/Gotham-Font/GothamBoldItalic.ttf);
+}
+
+/* Adding another new font */
+@font-face {
+  font-family: "gothamUltraItalic";
+  src: url(/Gotham-Font/Gotham-UltraItalic.otf);
+}
+
+/* The default of the wep Page */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* The First Word Shows When Enter The Page */
+.hi {
+  /* display: none; */
+  opacity: 0;
+  position: absolute;
+  font-size: 15rem;
+  background: linear-gradient(
+    rgb(0, 0, 0),
+    rgb(0, 0, 0),
+    rgb(255, 255, 255),
+    rgb(255, 0, 0)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-align: center;
+  top: 34%;
+  left: 28%;
+  animation: show-hide-hi 3s linear forwards;
+}
+
+/* The Title Of The Page */
+.title {
+  position: absolute;
+  top: 0;
+  background: linear-gradient(
+    rgb(0, 0, 0),
+    rgb(0, 0, 0),
+    rgb(255, 255, 255),
+    rgb(255, 0, 0)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 2.3rem;
+  font-family: "gothamUltraItalic";
+  top: 2%;
+  left: 13.3%;
+  animation: title-animation-display 6s,
+    title-animation-position 7s cubic-bezier(0.5, 0, 0.43, 1.84) forwards;
+}
+
+/* The Mask Of The Page */
+.mask {
+  background-image: url(/Project-Pictures/body-bg.jpg);
+  background-repeat: no-repeat;
+  -webkit-mask-image: radial-gradient(
+    ellipse at top,
+    black,
+    black,
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0)
+  );
+  mask-image: radial-gradient(
+    ellipse at center,
+    black 0%,
+    black 50%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  max-width: 100%;
+  background-size: 100%;
+  background-position: 25% 25%;
+  height: 100vh;
+  opacity: 0.6;
+}
+
+/* The Content View */
+.content {
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  animation: pop-up-the-content 12s ease-in-out forwards;
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+}
+
+/* The team name */
+
+/* The container of madlips texts */
+#madlipsText {
+  display: flex;
+  justify-content: space-between;
+  font-family: "gothamBoldItalic";
+  flex-direction: row;
+  margin: 7% auto;
+}
+
+@media (max-width: 767px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  #madlipsText {
+    flex-direction: column;
+  }
+}
+
+/* The madlips */
+.madLibsEdit,
+.madLibsPreview {
+  background-image: url(/Project-Pictures/Text-bg.png);
+  mask-image: radial-gradient(
+    ellipse at center,
+    black 0%,
+    black 50%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  background-size: cover;
+  background-position: 25% 25%;
+  margin: 1%;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-family: "gothamUltraItalic";
+  padding: 1%;
+  line-height: 2rem;
+}
+
+/* The inputs style */
+input {
+  background: fixed;
+  border: none;
+  border-bottom: 2px solid;
+  text-align: center;
+  margin: 5px;
+  flex: 50%;
+  color: black;
+  border: 1px solid #ccc;
+  width: 20%;
+  border: 1px solid rgb(7, 7, 7);
+  border-radius: 20px;
+  font-family: "gothamUltraItalic";
+  line-height: 1.5rem;
+  box-shadow: 5px 1px 5px black;
+}
+
+/* The inputs styling on focus*/
+input:focus {
+  outline: none;
+  color: black;
+  box-shadow: 0 0 0 2px #2196f3;
+}
+
+.madLibsPreview input {
+  border: none;
+  background: black;
+  color: rgb(255, 255, 255);
+  box-shadow: 0 0 0 2px #ef0404c8;
+}
+
+/* The Animation for the Hi Sentens */
+@keyframes show-hide-hi {
+  0% {
+    opacity: 0;
+  }
+
+  75% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Hide The Content Untel The Pop Up finish */
+@keyframes pop-up-the-content {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+    display: none;
+  }
+
+  100% {
+    display: block;
+    opacity: 1;
+  }
+}
+
+/* Title Animation for Display */
+@keyframes title-animation-display {
+  0% {
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Title Animation to change position */
+@keyframes title-animation-position {
+  0% {
+    top: 43%;
+  }
+
+  50% {
+    top: 43%;
+  }
+
+  75% {
+    top: 43%;
+  }
+
+  100% {
+    top: 2%;
+  }
+}
