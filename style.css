@@ -1,10 +1,25 @@
+@font-face {
+    font-family: "gothamBold";
+    src: url(/Gotham-Font/GothamBold.ttf);
+}
+
+@font-face {
+    font-family: "gothamUltra";
+    src: url(/Gotham-Font/Gotham-UltraItalic.otf);
+}
+
+@font-face {
+    font-family: "gothamBlack";
+    src: url(/Gotham-Font/Gotham-Black.otf);
+}
+
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
 
 header {
+    font-family: "gothamUltra";
     background-color: blue;
     color: #fff;
     padding: 1em;
@@ -26,6 +41,7 @@ nav ul {
 
 nav li {
     display: inline-block;
+    font-family: "gothamBold";
     margin-right: 1em;
 }
 
@@ -37,6 +53,35 @@ nav a {
 main {
     padding: 1em;
     text-align: center;
+}
+
+h2 {
+    font-size: 32px;
+    font-family: "gothamBlack";
+}
+
+a button {
+    margin: 0 auto;
+    display: block;
+    background: blue;
+    color: #fff;
+    padding : 15px 25px;
+    background-image: radial-gradient(93% 87% at 87% 89%, rgba(0, 0, 0, 0.23) 0%, transparent 86.18%), radial-gradient(66% 66% at 26% 20%, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0) 69.79%, rgba(255, 255, 255, 0) 100%);
+    box-shadow: inset -3px -3px 9px rgba(255, 255, 255, 0.25), inset 0px 3px 9px rgba(255, 255, 255, 0.3), inset 0px 1px 1px rgba(255, 255, 255, 0.6), inset 0px -8px 36px rgba(0, 0, 0, 0.3), inset 0px 1px 5px rgba(255, 255, 255, 0.6), 2px 19px 31px rgba(0, 0, 0, 0.2);
+    border-radius: 14px;
+    font-weight: bold;
+    font-size: 2rem;
+    transition: 1s ease;
+    cursor: pointer;
+}
+a button:hover {
+    transform: scale(1.2);
+    background-color: #328b8b;
+}
+
+p {
+    text-align: center;
+    font-family: "gothamBold";
 }
 
 footer {

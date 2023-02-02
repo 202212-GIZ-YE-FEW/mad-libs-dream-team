@@ -89,16 +89,33 @@
 	background-size: 100%;
 	background-position: 25% 25%;
 	height: 100vh;
+	opacity: 0.6;
 }
 
 /* The Content View */
 .content {
-	display: none;
+	/* display: none; */
 	position: absolute;
 	top: 0;
 	height: 100vh;
 	width: 100%;
 	animation: pop-up-the-content 8s ease-in-out forwards;
+	position: absolute;
+	top: 0;
+	height: 100vh;
+	width: 100%;
+}
+
+/* The team name */
+h1 {
+	background: linear-gradient(rgb(0, 0, 0), rgb(247, 156, 120), rgb(0, 0, 0), rgb(247, 156, 120));
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	text-align: center;
+	font-size: 70px;
+	font-family: "gothamUltraItalic";
+
 }
 
 /* The container of madlips texts */
@@ -107,6 +124,21 @@
 	justify-content: space-around;
 	font-family: "gothamBoldItalic";
 	margin-top: 18%;
+	display: flex;
+	flex-direction: row;
+	font-family: "gothamBoldItalic";
+	justify-content: space-around;
+	margin: 10px auto;
+}
+
+@media (max-width: 767px) {
+	h1 {
+		font-size: 20px;
+	}
+
+	#madlipsText {
+		flex-direction: column;
+	}
 }
 
 /* The madlips */
@@ -126,11 +158,44 @@
 
 
 /* The inputs style */
-input {
+/* input {
 	background: fixed;
 	border: none;
 	width: 100px;
 	border-bottom: 2px solid;
+	background-image: url(/Project-Pictures/test.jpg);
+	margin: 10px;
+	flex: 50%;
+	border: 1px solid #ccc;
+	margin: 0.3%;
+	width: 100%;
+	border: 1px solid rgb(7, 7, 7);
+	border-radius: 20px;
+	font-family: "gothamUltraItalic";
+	padding: 1%;
+	line-height: 2rem;
+	box-shadow: 5px 1px 5px black;
+} */
+
+input {
+	background: fixed;
+	border: none;
+	border-bottom: 2px solid;
+	font-family: "gothamUltraItalic";
+	margin: 10px;
+	text-align: center;
+	width: 6rem;
+	color: black;
+	width: 120px;
+	border-bottom: 2px solid;
+	margin: 3px;
+	border-radius: 20px;
+	font-family: "gothamUltraItalic";
+	text-align: left;
+	padding-left: 10px;
+	margin-right: 1px;
+	line-height: 2rem;
+
 }
 
 /* The inputs styling on focus*/
@@ -174,4 +239,12 @@ input:focus {
 	100% {
 		opacity: 1;
 	}
+}
+
+.madLibsPreview input {
+	border: none;
+	background: black;
+	color: rgb(255, 255, 255);
+	box-shadow: 0 0 0 2px #ef0404c8;
+
 }
