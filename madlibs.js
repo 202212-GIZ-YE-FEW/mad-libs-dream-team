@@ -29,13 +29,13 @@
 
 function parseStory(rawStory) {
   let arr = rawStory.split(" ");
-  let newArr = arr.map(
-    (ele) => {
-    if (ele.includes("[")) { // if it contains [
+  let newArr = arr.map((ele) => {
+    if (ele.includes("[")) {
+      // if it contains [
       let pos;
       let index = ele.indexOf("[");
       let word = ele.slice(0, index); // take the word
-      let regex = ele.match(/\[(.*?)\]/)[1];//take the character inside the square //Dot . =>match any character except newlines     Quantifier * => Match 0 or more of the preceding token.  Lazy ? =>Makes the preceding quantifier lazy, causing it to match as few characters as possible.
+      let regex = ele.match(/\[(.*?)\]/)[1]; //take the character inside the square //Dot . =>match any character except newlines     Quantifier * => Match 0 or more of the preceding token.  Lazy ? =>Makes the preceding quantifier lazy, causing it to match as few characters as possible.
       if (regex === "v") {
         pos = "verb";
       } else if (regex === "n") {
@@ -49,13 +49,11 @@ function parseStory(rawStory) {
     } else {
       return { word: ele };
     }
-  }
-  )
-  ;
-  return newArr; // new array 
+  });
+  return newArr; // new array
 }
 
-// instead of every part of speach we will place an input specifing the placeholder 
+// instead of every part of speach we will place an input specifing the placeholder
 function buildStory(processedStory) {
   const madLibsEdit = document.querySelector(".madLibsEdit");
   const madLibsPreview = document.querySelector(".madLibsPreview");
@@ -77,22 +75,27 @@ function buildStory(processedStory) {
 
       editParagraph.appendChild(inputEdit);
       previewParagraph.appendChild(inputPreview);
-     
+
       inputEdit.placeholder = word.pos;
       inputPreview.placeholder = word.pos;
 
       inputEdit.maxLength = 20;
 
-      inputEdit.addEventListener("keydown", () => {
+      inputEdit.addEventListener("keyup", () => {
         inputPreview.value = inputEdit.value;
       });
 
       //if the user enters ENTER key then the focus moves to the next input
       inputEdit.addEventListener("keydown", (event) => {
-        if (event.key === "Enter") {
+        if (event.key === "Enter" || event.key === "ArrowRight") {
           let nextElement = inputEdit.nextElementSibling;
           if (nextElement != null) {
             nextElement.focus();
+          }
+        } else if (event.key === "ArrowLeft") {
+          let previousElememt = inputEdit.previousElementSibling;
+          if (previousElememt != null) {
+            previousElememt.focus();
           }
         }
       });
