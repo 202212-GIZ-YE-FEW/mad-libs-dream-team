@@ -20,6 +20,10 @@
     box-sizing: border-box;
 }
 
+body {
+    
+}
+
 .mask {
     background-image: url(/Project-Pictures/body-bg.jpg);
     -webkit-mask-image: radial-gradient(ellipse at top, black 15%, black 60%, rgba(0, 0, 0, 0.3) 65%, rgba(0, 0, 0, 0) 0%);
@@ -28,6 +32,7 @@
     background-size: cover;
     background-position: 25% 25%;
     height: 100vh;
+    opacity: 0.6;
 }
 
 .content {
@@ -44,16 +49,26 @@ h1 {
     background-clip: text;
     color: transparent;
     text-align: center;
-    font-size: 400%;
+    font-size: 70px;
     font-family: "gothamUltraItalic";
 }
 
 /* The container of madlips texts */
 #madlipsText {
     display: flex;
-    justify-content: space-around;
-    margin: 2%;
+    flex-direction: row;
     font-family: "gothamBoldItalic";
+    justify-content: space-around;
+    margin: 10px auto;
+}
+
+@media (max-width: 767px) {
+    h1 {
+        font-size: 20px;
+    }
+    #madlipsText {
+        flex-direction: column;
+    }
 }
 
 /* The madlips style */
@@ -61,15 +76,16 @@ h1 {
 .madLibsPreview {
     opacity: 0.8;
     background-image: url(/Project-Pictures/test.jpg);
-    margin: 1%;
-    width: 100%;
+    margin: 10px;
+    flex: 50%;
     border: 1px solid #ccc;
     border-radius: 20px;
     font-family: "gothamUltraItalic";
     padding: 1%;
     line-height: 2rem;
-
+    box-shadow: 5px 1px 5px black;
 }
+
 
 
 /* The inputs styling for the noun */
@@ -77,14 +93,21 @@ h1 {
 input {
     background: fixed;
     border: none;
-    width: 100px;
     border-bottom: 2px solid;
+    font-family: "gothamUltraItalic";
+    margin: 10px;
+    text-align: center;
+    width: 6rem;
+    color: black;
 }
 
 /* The inputs styling on focus*/
 input:focus {
     outline: none;
-    /* background: black; */
     color: black;
     box-shadow: 0 0 0 2px #2196F3;
+}
+
+.madLibsPreview input {
+    border: none;
 }
