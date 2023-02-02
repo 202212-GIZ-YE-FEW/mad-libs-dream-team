@@ -105,7 +105,6 @@
 
 /* The Content View */
 .content {
-	/* display: none; */
 	position: absolute;
 	top: 0;
 	height: 100vh;
