@@ -120,11 +120,9 @@ getRawStory()
     const reset = document.getElementById("reset");
     reset.value = "Reset";
     reset.addEventListener("click", () => {
-      const editBlanks = document.querySelectorAll(".madLibsEdit input");
+      const editBlanks = document.querySelectorAll("input");
       editBlanks.forEach((item) => {
         item.value = "";
-        item.style = "";
-        item.classList.add(`${item.placeholder}`);
       });
       prevBlanks.forEach((item) => {
         item.innerHTML = "";
