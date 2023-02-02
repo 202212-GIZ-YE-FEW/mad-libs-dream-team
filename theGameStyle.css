@@ -45,39 +45,43 @@
 	-webkit-background-clip: text;
 	background-clip: text;
 	-webkit-text-fill-color: transparent;
-	font-size: 450%;
+	font-size: 2.3rem;
 	font-family: "gothamUltraItalic";
 	top: 2%;
 	left: 13.3%;
-	animation: title-animation 3s linear forwards;
+	animation: title-animation-rotate 2.5s, title-animation-size 3s linear forwards;
 }
 
 /* The Animation Of The Title */
-@keyframes title-animation {
+@keyframes title-animation-rotate {
+	form {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes title-animation-size {
 	0% {
-		/* transform: rotate(0deg); */
-		top: 46%;
-		left: 19.3%;
+		top: 43%;
 	}
 
 	50% {
-		/* transform: rotate(45deg); */
-		top: 46%;
-		left: 19.3%;
+		top: 43%;
 	}
 
+
 	75% {
-		/* transform: rotate(180deg); */
-		top: 46%;
-		left: 19.3%;
+		top: 43%;
 	}
 
 	100% {
-		/* transform: rotate(360deg); */
 		top: 2%;
-		left: 13.3%;
 	}
 }
+
 
 /* The Mask Of The Page */
 .mask {
@@ -107,16 +111,7 @@
 }
 
 /* The team name */
-h1 {
-	background: linear-gradient(rgb(0, 0, 0), rgb(247, 156, 120), rgb(0, 0, 0), rgb(247, 156, 120));
-	-webkit-background-clip: text;
-	background-clip: text;
-	color: transparent;
-	text-align: center;
-	font-size: 70px;
-	font-family: "gothamUltraItalic";
 
-}
 
 /* The container of madlips texts */
 #madlipsText {
