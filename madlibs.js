@@ -29,12 +29,13 @@
 
 function parseStory(rawStory) {
   let arr = rawStory.split(" ");
-  let newArr = arr.map((ele) => {
-    if (ele.includes("[")) {
+  let newArr = arr.map(
+    (ele) => {
+    if (ele.includes("[")) { // if it contains [
       let pos;
       let index = ele.indexOf("[");
-      let word = ele.slice(0, index);
-      let regex = ele.match(/\[(.*?)\]/)[1]; //Dot . =>match any character except newlines     Quantifier * => Match 0 or more of the preceding token.  Lazy ? =>Makes the preceding quantifier lazy, causing it to match as few characters as possible.
+      let word = ele.slice(0, index); // take the word
+      let regex = ele.match(/\[(.*?)\]/)[1];//take the character inside the square //Dot . =>match any character except newlines     Quantifier * => Match 0 or more of the preceding token.  Lazy ? =>Makes the preceding quantifier lazy, causing it to match as few characters as possible.
       if (regex === "v") {
         pos = "verb";
       } else if (regex === "n") {
@@ -48,10 +49,13 @@ function parseStory(rawStory) {
     } else {
       return { word: ele };
     }
-  });
-  return newArr;
+  }
+  )
+  ;
+  return newArr; // new array 
 }
 
+// instead of every part of speach we will place an input specifing the placeholder 
 function buildStory(processedStory) {
   const madLibsEdit = document.querySelector(".madLibsEdit");
   const madLibsPreview = document.querySelector(".madLibsPreview");
@@ -61,27 +65,29 @@ function buildStory(processedStory) {
 
   madLibsEdit.appendChild(editParagraph);
   madLibsPreview.appendChild(previewParagraph);
-
+  // pass through every object inside the array
   for (let word of processedStory) {
+    // if the word has a part of speach word
     if (word.pos != undefined) {
       //if its a special word with [x]
-
+      // create inputs
       const inputEdit = document.createElement("input");
       const inputPreview = document.createElement("input");
       inputPreview.readOnly = true;
 
       editParagraph.appendChild(inputEdit);
       previewParagraph.appendChild(inputPreview);
-
+     
       inputEdit.placeholder = word.pos;
       inputPreview.placeholder = word.pos;
 
       inputEdit.maxLength = 20;
 
-      // inputEdit.addEventListener("keydown", () => {
-      //   inputPreview.value = inputEdit.value;
-      // });
+      inputEdit.addEventListener("keydown", () => {
+        inputPreview.value = inputEdit.value;
+      });
 
+      //if the user enters ENTER key then the focus moves to the next input
       inputEdit.addEventListener("keydown", (event) => {
         if (event.key === "Enter") {
           let nextElement = inputEdit.nextElementSibling;
@@ -91,6 +97,7 @@ function buildStory(processedStory) {
         }
       });
     } else {
+      // if it does not have part of speach then the word
       editParagraph.append(` ${word.word}`);
       previewParagraph.append(` ${word.word}`);
     }
