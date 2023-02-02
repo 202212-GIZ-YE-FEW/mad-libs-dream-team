@@ -118,8 +118,27 @@
 }
 
 /* The team name */
+h1 {
+	font-size: 80px;
+}
 
+@media (max-width: 1429px) {
+	h1 {
+		font-size: 75px;
+	}
+}
 
+@media (max-width: 1024px) {
+	h1 {
+		font-size: 50px;
+	}
+}
+
+@media (max-width: 893px) {
+	h1 {
+		font-size: 40px;
+	}
+}
 /* The container of madlips texts */
 #madlipsText {
 	display: flex;
@@ -132,6 +151,7 @@
 @media (max-width: 767px) {
 	h1 {
 		font-size: 20px;
+		animation: none;
 	}
 
 	#madlipsText {
@@ -152,20 +172,17 @@
 	font-family: "gothamUltraItalic";
 	padding: 1%;
 	line-height: 2rem;
+	box-shadow: 5px 1px 5px black;
 }
 
 
 /* The inputs style */
-input {
+.madLibsEdit input {
 	background: fixed;
-	border: none;
-	border-bottom: 2px solid;
 	text-align: center;
 	margin: 5px;
-	flex: 50%;
 	color: black;
-	border: 1px solid #ccc;
-	width: 20%;
+	width: 7rem;
 	border: 1px solid rgb(7, 7, 7);
 	border-radius: 20px;
 	font-family: "gothamUltraItalic";
@@ -183,10 +200,10 @@ input:focus {
 
 .madLibsPreview input {
 	border: none;
-	background: black;
-	color: rgb(255, 255, 255);
-	box-shadow: 0 0 0 2px #ef0404c8;
-
+	background: fixed;
+	font-family: "gothamUltraItalic";
+	line-height: 1.5rem;
+	text-align: center;
 }
 
 /* The Animation for the Hi Sentens */
