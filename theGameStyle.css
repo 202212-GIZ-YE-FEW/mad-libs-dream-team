@@ -1,90 +1,177 @@
 /**
  * Your CSS goes here.
  */
+
 /* Adding new fonts */
 @font-face {
-    font-family: "gothamBoldItalic";
-    src: url(/Gotham-Font/GothamBoldItalic.ttf);
+	font-family: "gothamBoldItalic";
+	src: url(/Gotham-Font/GothamBoldItalic.ttf);
 }
 
 /* Adding another new font */
 @font-face {
-    font-family: "gothamUltraItalic";
-    src: url(/Gotham-Font/Gotham-UltraItalic.otf);
+	font-family: "gothamUltraItalic";
+	src: url(/Gotham-Font/Gotham-UltraItalic.otf);
 }
 
-/* The default of the wep body */
+/* The default of the wep Page */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
+/* The First Word Shows When Enter The Page */
+.hi {
+	display: none;
+	opacity: 0;
+	position: absolute;
+	font-size: 15rem;
+	background: radial-gradient(rgb(255, 255, 255), rgb(0, 255, 17), rgb(255, 255, 255), rgb(0, 255, 17));
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	text-align: center;
+	top: 34%;
+	left: 28%;
+	animation: show-hide-hi 3s linear forwards;
+}
+
+/* The Title Of The Page */
+.title {
+	position: absolute;
+	top: 0;
+	background: radial-gradient(rgb(255, 255, 255), rgb(0, 255, 17), rgb(255, 255, 255), rgb(0, 255, 17));
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	font-size: 450%;
+	font-family: "gothamUltraItalic";
+	top: 2%;
+	left: 13.3%;
+	animation: title-animation 3s linear forwards;
+}
+
+/* The Animation Of The Title */
+@keyframes title-animation {
+	0% {
+		/* transform: rotate(0deg); */
+		top: 46%;
+		left: 19.3%;
+	}
+
+	50% {
+		/* transform: rotate(45deg); */
+		top: 46%;
+		left: 19.3%;
+	}
+
+	75% {
+		/* transform: rotate(180deg); */
+		top: 46%;
+		left: 19.3%;
+	}
+
+	100% {
+		/* transform: rotate(360deg); */
+		top: 2%;
+		left: 13.3%;
+	}
+}
+
+/* The Mask Of The Page */
 .mask {
-    background-image: url(/Project-Pictures/body-bg.jpg);
-    -webkit-mask-image: radial-gradient(ellipse at top, black 15%, black 60%, rgba(0, 0, 0, 0.3) 65%, rgba(0, 0, 0, 0) 0%);
-    mask-image: radial-gradient(ellipse at center, black 0%, black 50%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0) 100%);
-    max-width: 100%;
-    background-size: cover;
-    background-position: 25% 25%;
-    height: 100vh;
+	background-image: url(/Project-Pictures/body-bg.jpg);
+	background-repeat: no-repeat;
+	-webkit-mask-image: radial-gradient(ellipse at top, black, black, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
+	mask-image: radial-gradient(ellipse at center, black 0%, black 50%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0) 100%);
+	max-width: 100%;
+	background-size: 100%;
+	background-position: 25% 25%;
+	height: 100vh;
 }
 
+/* The Content View */
 .content {
-    position: absolute;
-    top: 0;
-    height: 100vh;
-    width: 100%;
-}
-
-/* The team name */
-h1 {
-    background: linear-gradient(rgb(0, 0, 0), rgb(247, 156, 120), rgb(0, 0, 0), rgb(247, 156, 120));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    text-align: center;
-    font-size: 400%;
-    font-family: "gothamUltraItalic";
+	display: none;
+	position: absolute;
+	top: 0;
+	height: 100vh;
+	width: 100%;
+	animation: pop-up-the-content 8s ease-in-out forwards;
 }
 
 /* The container of madlips texts */
 #madlipsText {
-    display: flex;
-    justify-content: space-around;
-    margin: 2%;
-    font-family: "gothamBoldItalic";
+	display: flex;
+	justify-content: space-around;
+	font-family: "gothamBoldItalic";
+	margin-top: 18%;
 }
 
-/* The madlips style */
+/* The madlips */
 .madLibsEdit,
 .madLibsPreview {
-    opacity: 0.8;
-    background-image: url(/Project-Pictures/test.jpg);
-    margin: 1%;
-    width: 100%;
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    font-family: "gothamUltraItalic";
-    padding: 1%;
-    line-height: 2rem;
-
+	background-image: url(/Project-Pictures/Text-bg.png);
+	mask-image: radial-gradient(ellipse at center, black 0%, black 50%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0) 100%);
+	background-size: cover;
+	background-position: 25% 25%;
+	margin: 1%;
+	border: 1px solid #ccc;
+	border-radius: 20px;
+	font-family: "gothamUltraItalic";
+	padding: 1%;
+	line-height: 2rem;
 }
 
 
-/* The inputs styling for the noun */
-
+/* The inputs style */
 input {
-    background: fixed;
-    border: none;
-    width: 100px;
-    border-bottom: 2px solid;
+	background: fixed;
+	border: none;
+	width: 100px;
+	border-bottom: 2px solid;
 }
 
 /* The inputs styling on focus*/
 input:focus {
-    outline: none;
-    /* background: black; */
-    color: black;
-    box-shadow: 0 0 0 2px #2196F3;
+	outline: none;
+	color: black;
+	box-shadow: 0 0 0 2px #2196F3;
+}
+
+/* The Animation for the Hi Sentens */
+@keyframes show-hide-hi {
+	0% {
+		opacity: 0;
+	}
+
+	75% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}
+
+/* Hide The Content Untel The Pop Up finish */
+@keyframes pop-up-the-content {
+	0% {
+		opacity: 0;
+	}
+
+	50% {
+		opacity: 0;
+		display: none;
+	}
+
+	60% {
+		display: block;
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 1;
+	}
 }
